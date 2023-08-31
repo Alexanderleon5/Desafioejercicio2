@@ -1,7 +1,7 @@
-import React from "react";
-import {data} from "../data";
-export const ProductList = ({
+import React, { useState } from "react";
+import { data } from "../data"; // Importa los datos desde el archivo data.js
 
+export const ProductList = ({
     allProducts,
     setAllProducts,
     countProducts,
@@ -9,22 +9,19 @@ export const ProductList = ({
     total,
     setTotal,
 }) => {
-    const onAddProduct = product => {
-        if (allProducts.find(item => item.id === product.id)) {
-            const products = allProducts.map(item =>
+    const [quantityInput, setQuantityInput] = useState("1");
 
-                item.id === product.id
-                    ? { ...item, quantity: item.quantity + 1 }
-                    : item
-            );
-            setTotal(total + product.price * product.quantity);
-            setCountProducts(countProducts + product.quantity);
-            return setAllProducts([...products]);
+    const onAddProduct = (product, quantity) => {
+        if (quantity > 0) {
+            const updatedProduct = { ...product, quantity: quantity };
+            const products = allProducts.concat(updatedProduct);
+
+            setTotal(total + product.price * quantity);
+            setCountProducts(countProducts + quantity);
+            setAllProducts(products);
         }
-        setTotal(total + product.price * product.quantity);
-        setCountProducts(countProducts + product.quantity);
-        setAllProducts([...allProducts, product]);
     };
+
     return (
         <div className='container-items'>
             {data.map(product => (
@@ -33,16 +30,22 @@ export const ProductList = ({
                         <img src={product.img} alt={product.title} />
                     </figure>
                     <div className='info-product'>
-                        <h2>{product.nameProduct}</h2>
-                       
-                        <h2 className="titulo">{product.title}</h2>
+                        <h2>{product.title}</h2>
                         <h2>Precio</h2>
                         <p className='price'>${product.price}</p>
                         <h2>Categoria</h2>
                         <p className="categoria">{product.categoria}</p>
                         <h2>Descripcion</h2>
                         <p className="descripcion">{product.descripcion}</p>
-                        <button onClick={() => onAddProduct(product)}>
+                        <h3>Cantidad</h3>
+                        <input
+                            name="cantidad"
+                            type="number"
+                            min="1"
+                            value={quantityInput}
+                            onChange={e => setQuantityInput(e.target.value)}
+                        />
+                        <button onClick={() => onAddProduct(product, parseInt(quantityInput))}>
                             Añadir al carrito
                         </button>
                     </div>

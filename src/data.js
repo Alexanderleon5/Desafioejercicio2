@@ -23,7 +23,7 @@ export const data=[
     },
     {
         id:2,
-        title:'Conjunto De Futbol de Hombre',
+        title:'Camisa De Futbol de Hombre',
         categoria: "futbol",
         descripcion: "Conjunto de futbol, pantalon y camiseta de hombre.",
         price:30,

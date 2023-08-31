@@ -35,6 +35,8 @@ header{
     display: flex;
     justify-content: space-between;
     padding: 30px 0 40px 0;
+    background-color: yellow;
+    text-align: center;
 }
 
 .container-icon{

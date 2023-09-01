@@ -1,0 +1,124 @@
+.App {
+  text-align:left;
+}
+
+.App-content {
+  text-align:left;
+  background-color: #61dafb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+  
+.App-header {
+  text-align:left;
+  background-color: #c8d7f8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(0, 0, 0);
+  
+}
+
+.Rectangle-1 {
+  width: 860px;
+  height: 600px;
+  flex-grow: 0;
+  padding: 5.5px 5px 34px 34px;
+  border: solid 1px #000;
+  background-color: #c8d7f8;
+}
+
+.select-cantidad{
+  text-align:center;
+  width: 50px;
+  height: 38px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 5px;
+  padding: 0.5em 5em;
+  vertical-align: auto;
+  background-color: #f4f4f4;
+}
+
+thead{
+  text-align:center;
+}
+
+.total{
+  padding-right: 300px;
+  
+  text-align: right;
+}
+
+.form-select{
+  text-align:left;
+  width: 500px;
+  height: 38px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 8px;
+  padding: 0.5em 5em;
+  vertical-align: auto;
+  background-color: #f4f4f4;
+}
+
+form button {
+  cursor: pointer;
+  display:inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin: 2px 0;
+  border: solid 1px transparent;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  color: #ffffff;
+  background-color: rgb(33, 93, 234);
+  height: 30px;
+width: 120px;
+}
+
+h3 {
+margin: 0;
+text-align:left;
+}
+
+.list {
+text-align:left;
+display: flex;
+margin: 10px;
+flex-direction: row;
+align-items: flex-end;
+padding-left: 50px;
+}
+
+.btn-delete{
+  cursor:pointer;
+  display:inline-block;
+  text-align:center;
+  text-decoration:none;
+  border:solid 1px transparent;
+  border: radius 4px;
+  color: #ffffff;
+  background-color:red;
+  height:30px;
+  width:30px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid rgb(56, 56, 56);
+}
